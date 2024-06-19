@@ -1,2 +1,2 @@
 # TweetCopyButton
-Button that lets you copy a tweer
+Button that lets you copy a tweet
