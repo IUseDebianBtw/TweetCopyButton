@@ -14,7 +14,7 @@
     'use strict';
 
 
-    const iconUrl = 'https://github.com/IUseDebianBtw/TweetCopyButton'; 
+    const iconUrl = 'https://github.com/IUseDebianBtw/TweetCopyButton/blob/main/src/icon.png'; 
 
     // Function to create the copy button
     function createCopyButton() {
@@ -34,7 +34,7 @@
 
         let text = document.createElement('span');
         text.innerText = 'Copy Tweet';
-        text.style.color = '#1DA1F2'; // Twitter blue color
+        text.style.color = '#1DA1F2';
         text.style.fontWeight = 'bold';
 
         button.appendChild(icon);
