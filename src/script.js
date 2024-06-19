@@ -2,9 +2,9 @@
 // @name         Copy Tweet Button
 // @homepageURL  https://github.com/IUseDebianBtw/TweetCopyButton
 // @version      1.0
-// @description  Adds a button to copy a tweer
+// @description  Adds a button to copy a tweet
 // @author       IUseDebianBtw
-// @license      GPL-3.0 
+// @license      GPL-3.0
 // @match        https://twitter.com/*
 // @match        https://x.com/*
 // @grant        none
@@ -13,8 +13,7 @@
 (function() {
     'use strict';
 
-
-    const iconUrl = 'https://github.com/IUseDebianBtw/TweetCopyButton/blob/main/src/icon.png'; 
+    const iconUrl = 'https://raw.githubusercontent.com/IUseDebianBtw/TweetCopyButton/main/src/icon.png';
 
     // Function to create the copy button
     function createCopyButton() {
@@ -32,8 +31,12 @@
         icon.style.height = '20px';
         icon.style.marginRight = '5px';
 
+        // Check if the icon loads successfully
+        icon.onerror = function() {
+            console.error('Failed to load icon:', iconUrl);
+        };
+
         let text = document.createElement('span');
-        text.innerText = 'Copy Tweet';
         text.style.color = '#1DA1F2';
         text.style.fontWeight = 'bold';
 
@@ -87,7 +90,6 @@
             }
         });
     }
-
 
     let observer = new MutationObserver(addCopyButtonToTweets);
     observer.observe(document, { childList: true, subtree: true });
